@@ -15,7 +15,7 @@ defined('_Afi') or die ('restricted access');
 
 if(!$user->getAuth()) {
     $app->setMessage('No tens suficients permisos per accedir a aquest àrea', 'error');
-    $app->redirect($config->site.'/index.php?view=home');
+    //$app->redirect($config->site.'/index.php?view=home');
 }
 
 if($app->getVar('layout', '') == 'calendar') {

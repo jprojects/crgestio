@@ -38,6 +38,10 @@ document.querySelector('.sidebar-hide').addEventListener('click', () => {
 
 })
 
+document.querySelector('#darkmodeHeaderBtn').addEventListener('click', () => {
+    $.get(domain+"?view=home&task=setTemplateMode&mode=raw");
+    location.reload();
+})
 
 // Perfect Scrollbar Init
 if(typeof PerfectScrollbar == 'function') {
