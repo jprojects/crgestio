@@ -18,16 +18,19 @@ class home extends model
 {
     public function setTemplateMode()
     {
-        $db   = factory::getDatabase();
-        $lang = factory::getLanguage();
+        $db       = factory::getDatabase();
+        $lang     = factory::getLanguage();
+        $settings = factory::getSettings();
+        $app      = factory::getApplication();
+
+        $settings->dark_mode == 1 ? $mode = 0 : $mode = 1;
   
-        $result = $db->query("UPDATE #_settings SET dark_mode = !dark_mode");
+        $result = $db->query("UPDATE #_settings SET dark_mode = ".$mode." WHERE Id = 1");
   
         if($result) {
           $app->setMessage($lang->get('CW_SETTINGS_SAVE_SUCCESS'), 'success');
         } else {
           $app->setMessage($lang->get('CW_SETTINGS_SAVE_ERROR'), 'danger');
         }
-      }
     }
 }

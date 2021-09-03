@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="<?= $config->site; ?>/template/<?= $config->template; ?>/vendor/messenger-hubspot/build/css/messenger.css">
     <link rel="stylesheet" href="<?= $config->site; ?>/template/<?= $config->template; ?>/vendor/messenger-hubspot/build/css/messenger-theme-flat.css">
     <link rel="stylesheet" href="<?= $config->site; ?>/template/<?= $config->template; ?>/dist/assets/css/app.css">
-    <?php if($settings->dark_mode = 1): ?>
+    <?php if($settings->dark_mode == 1): ?>
     <link rel="stylesheet" href="<?= $config->site; ?>/template/<?= $config->template; ?>/dist/assets/css/dark.css">
     <?php endif; ?>
     <?php
