@@ -145,8 +145,8 @@ function Mois()
 {
     //pintem els selects
     let htmlAnnee = "";
-    let annee = date.getFullYear();
-    for(i=(annee-20);i<(annee+21);i++){
+    let annee = new Date().getFullYear();
+    for(i=(annee-10);i<(annee+11);i++){
 
         htmlAnnee += "<option ";
         if(i==annee) htmlAnnee += "selected ";
