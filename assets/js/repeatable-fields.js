@@ -14,6 +14,11 @@
 
 		self.after_add = function(container, new_row) {
 			var row_count = $(container).attr('data-rf-row-count');
+			row_count++;
+			//omplim attributs de linia i cel·les amb comptadors
+			$(new_row).addClass('row'+row_count);
+			$(new_row).find('td').addClass('cell'+row_count);
+			$(new_row).find('span.remove').attr('data-cell', row_count);
 
 			row_count++;
 

@@ -603,25 +603,25 @@ class Html
 			}
 
 		} else {
-			$html .= "<tr>";
+			$html .= "<tr class='row0'>";
 			
 			foreach($fields as $field) {
 				foreach($this->getForm($form) as $row) {
 					if($row['name'] == $field) {
 					$row[0]->width == '' ? $width = '40%' : $width = $row[0]->width;
                     if($row[0]->type == 'hidden') { $html .= $this->getTextField($form, $field); }
-					if($row[0]->type == 'text') { $html .= "<td width='".$width."'>".$this->getTextField($form, $field)."</td>"; }
-                    if($row[0]->type == 'date') { $html .= "<td width='".$width."'>".$this->getDateField($form, $field)."</td>"; }
-                    if($row[0]->type == 'datetime') { $html .= "<td width='".$width."'>".$this->getDateTimeField($form, $field)."</td>"; }
-					if($row[0]->type == 'textarea') { $html .= "<td width='".$width."'>".$this->getTextareaField($form, $field)."</td>"; }
-					if($row[0]->type == 'list') { $html .= "<td width='".$width."'>".$this->getListField($form, $field, "", $list, $value, $key)."</td>"; }
-					if($row[0]->type == 'checkbox') { $html .= "<td width='".$width."'>".$this->getCheckboxField($form, $field)."</td>"; }
-					if($row[0]->type == 'radio') { $html .= "<td width='".$width."'>".$this->getRadioField($form, $field)."</td>"; }
+					if($row[0]->type == 'text') { $html .= "<td class='cell0' width='".$width."'>".$this->getTextField($form, $field)."</td>"; }
+                    if($row[0]->type == 'date') { $html .= "<td class='cell0' width='".$width."'>".$this->getDateField($form, $field)."</td>"; }
+                    if($row[0]->type == 'datetime') { $html .= "<td class='cell0' width='".$width."'>".$this->getDateTimeField($form, $field)."</td>"; }
+					if($row[0]->type == 'textarea') { $html .= "<td class='cell0' width='".$width."'>".$this->getTextareaField($form, $field)."</td>"; }
+					if($row[0]->type == 'list') { $html .= "<td class='cell0' width='".$width."'>".$this->getListField($form, $field, "", $list, $value, $key)."</td>"; }
+					if($row[0]->type == 'checkbox') { $html .= "<td class='cell0' width='".$width."'>".$this->getCheckboxField($form, $field)."</td>"; }
+					if($row[0]->type == 'radio') { $html .= "<td class='cell0' width='".$width."'>".$this->getRadioField($form, $field)."</td>"; }
 					}
 				}
 			}
 
-			$html .= '<td width="10%" valign="bottom" align="right"><div class="mb-3"><span class="remove btn btn-danger"><i class="bi bi-trash-fill"></i></span></div></td>';
+			$html .= '<td width="10%" valign="bottom" align="right"><div class="mb-3"><span class="remove btn btn-danger" data-cell="0"><i class="bi bi-trash-fill"></i></span></div></td>';
 		}
 		$html .= "<script>";
 		$html .= '$(document).ready(function () {';

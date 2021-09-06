@@ -3,7 +3,7 @@ $.ajaxSetup({async: false});
 document.addEventListener("DOMContentLoaded", function(event) {
     Mode();
 
-    $('.Projecte').change(function()
+    $(document).on("change", '.Projecte', function()
     {
         var id   = $(this).val();
         var cell = $(this).closest('td').attr("class");
