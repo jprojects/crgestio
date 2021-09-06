@@ -31,36 +31,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         $.get(domain+"?view=hores&task=deleteRegistre&id="+id+"&mode=raw");
     });
 
-
-    //pintem els selects
-    let htmlAnnee = "";
-    let annee =  new Date().getFullYear();
-    for(i=(annee-20);i<(annee+21);i++){
-
-        htmlAnnee += "<option ";
-        if(i==annee) htmlAnnee += "selected ";
-        htmlAnnee += "value='"+i+"'>"+i+"</option>";
-    }
-    $('#any').html(htmlAnnee);
-
-    let htmlMois = "";
-    for(i=0;i<12;i++){
-
-        htmlMois += "<option ";
-        if(i==mois) htmlMois += "selected ";
-        htmlMois += "value='"+i+"'>"+los_meses[i]+"</option>";
-    }
-    $('#mes').html(htmlMois);
-
 });
 
-//obtenim la data del localstoratge, si no hi ha data obtenim la actual
-date = getDateLocalStorage();
 
 let classe = '';
 let events = [];
-annee=date.getFullYear();
-mois=date.getMonth();
+
+//obtenim la data del localstoratge, si no hi ha data obtenim la actual
+date = getDateLocalStorage();
+annee = date.getFullYear();
+moi = date.getMonth();
 
 los_meses=["Gener","Febrer","Març","Abril","Maig","Juny","Juliol","Agost","Setembre","Octubre","Novembre","Desembre"];
 los_meses2=["J","F","M","A","M","J","J","A","S","O","N","D"];
@@ -163,6 +143,27 @@ function onDayClick(el) {
 
 function Mois()
 {
+    //pintem els selects
+    let htmlAnnee = "";
+    let annee = date.getFullYear();
+    for(i=(annee-20);i<(annee+21);i++){
+
+        htmlAnnee += "<option ";
+        if(i==annee) htmlAnnee += "selected ";
+        htmlAnnee += "value='"+i+"'>"+i+"</option>";
+    }
+    $('#any').html(htmlAnnee);
+
+    let htmlMois = "";
+    let mois = date.getMonth();
+    for(i=0;i<12;i++){
+
+        htmlMois += "<option ";
+        if(i==mois) htmlMois += "selected ";
+        htmlMois += "value='"+i+"'>"+los_meses[i]+"</option>";
+    }
+    $('#mes').html(htmlMois);
+
     //obtenim el primer i ultim dia respecte el mes i any seleccionat
     const firstDay = formatDate(new Date(getDateSelected().getFullYear(), getDateSelected().getMonth(), 1));
     const lastDay = formatDate(new Date(getDateSelected().getFullYear(), getDateSelected().getMonth() + 1, 0));

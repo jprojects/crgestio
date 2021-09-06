@@ -26,6 +26,7 @@
         <width>15%</width>
         <label>Descripció</label>
         <clase>Descripcio</clase>
+        <readonly>true</readonly>
     </field>
     <field name="Hores">
         <type>text</type>
@@ -41,6 +42,7 @@
         <width>10%</width>
         <label>Hores Reals</label>
         <clase>HoresReals</clase>
+        <readonly>true</readonly>
     </field>
     <field name="horesprevistes">
         <type>text</type>
@@ -49,6 +51,7 @@
         <width>10%</width>
         <label>Hores Prev</label>
         <clase>HoresPrev</clase>
+        <readonly>true</readonly>
     </field>
     <field name="KM">
         <type>text</type>

@@ -35,11 +35,6 @@ $date  	= $app->getVar('date', date('Y-m-d'), 'get');
     }
 
 </style>
-    
-    
-<script langage="JavaScript">
-    
-</script>
 
 <div class="page-heading">
     <div class="page-title">
